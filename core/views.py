@@ -1,6 +1,34 @@
 from django.shortcuts import render, redirect
-from .models import Area, PublicoAlvo, Curso
+from .models import Area, PublicoAlvo, Curso, Usuario
 from .forms import AreaForm, PublicoAlvoForm, CursoForm
+from django.contrib.auth import authenticate, login
+
+# Usuários
+from .models import Usuario
+from .forms import UsuarioFormCadastro
+
+def cadastro(request):
+    form = UsuarioFormCadastro(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    context = {
+        'form':form
+    }
+    return render(request, 'cadastro.html', context)
+
+def autenticar(request):
+    if request.POST:
+     username= request.POST['username']
+     password= request.POST['password']
+     user = authenticate(request,username= username, password= password)
+    
+    if user is not None:
+            login(request,user)
+            return redirect('index')
+    else:
+            return render(request, 'login.html')
+    
 
 def index(request):
     return render(request, 'index.html')

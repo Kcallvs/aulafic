@@ -1,6 +1,12 @@
 from django import forms
-from .models import Area, PublicoAlvo, Curso
+from .models import Area, PublicoAlvo, Curso, Usuario
+from django.contrib.auth.forms import UserCreationForm
 
+class UsuarioFormCadastro(UserCreationForm):
+    class Meta:
+         model = Usuario
+         fields = ['cpf', 'email','nascimento', 'first_name', 'last_name', 'username']
+     
 class AreaForm(forms.ModelForm):
     class Meta:
         model = Area
