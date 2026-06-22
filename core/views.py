@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Area, PublicoAlvo, Curso, Usuario
 from .forms import AreaForm, PublicoAlvoForm, CursoForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 # Usuários
 from .models import Usuario
@@ -15,19 +15,25 @@ def cadastro(request):
     context = {
         'form':form
     }
-    return render(request, 'cadastro.html', context)
+    return render(request, 'privado/cadastro.html', context)
 
 def autenticar(request):
+
     if request.POST:
-     username= request.POST['username']
-     password= request.POST['password']
-     user = authenticate(request,username= username, password= password)
-    
-    if user is not None:
+        username= request.POST['username']
+        password= request.POST['password']
+        user = authenticate(request,username= username, password= password)
+        if user is not None:
             login(request,user)
             return redirect('index')
-    else:
-            return render(request, 'login.html')
+        else:
+            return render(request, 'privado/login.html')
+    else: 
+        return render(request, 'privado/login.html')
+
+def sair(request):
+    logout(request)
+    return redirect('index')
     
 
 def index(request):

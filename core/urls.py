@@ -7,6 +7,7 @@ urlpatterns = [
     path('curso_galeria/', curso_galeria, name='curso_galeria'),
     path('cadastro/', cadastro, name="cadastro"),
     path('login/', autenticar, name="login"),
+    path('sair/', sair, name="sair"),
 
     path('area_listar', area_listar, name='area_listar'),
     path('area_cadastrar', area_cadastrar, name='area_cadastrar'),
