@@ -27,9 +27,9 @@
     <a href="#" class="nav-item"><span class="nav-icon">📚</span> Meus Cursos</a>
 
     <div class="nav-section">Gerenciamento</div>
-    <a href="#" class="nav-item"><span class="nav-icon">🎓</span> Cursos</a>
-    <a href="#" class="nav-item"><span class="nav-icon">🏷</span> Áreas</a>
-    <a href="#" class="nav-item"><span class="nav-icon">👥</span> Públicos-Alvo</a>
+    <a href="{% url 'curso_listar' %}" class="nav-item"><span class="nav-icon">🎓</span> Cursos</a>
+    <a href="{% url 'area_listar' %}" class="nav-item"><span class="nav-icon">🏷</span> Áreas</a>
+    <a href="{% url 'publicoalvo_listar' %}" class="nav-item"><span class="nav-icon">👥</span> Públicos-Alvo</a>
     <a href="#" class="nav-item"><span class="nav-icon">🔑</span> Usuários</a>
 
     <div class="nav-section">Sessão</div>

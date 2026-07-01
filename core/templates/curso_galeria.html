@@ -71,88 +71,19 @@ Lista de Cursos
       </select>
     </div>
 
+
     <div class="courses-grid">
 
+      {% curso in cursos %}
       <div class="course-card">
         <div class="course-card-img">💻</div>
         <div class="course-card-body">
-          <span class="course-area-tag">Informática</span>
-          <h3>Introdução à Programação com Python</h3>
+          <span class="course-area-tag">{{ curso.area.nome }}</span>
+          <h3>{{ curso.titulo }}</h3>
         </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
+        <div class="course-card-footer"><a href="{% 'curso_detalhe.html' %}" class="btn-card">Ver Curso</a></div>
       </div>
-
-      <div class="course-card">
-        <div class="course-card-img">🎪</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Eventos</span>
-          <h3>Organização e Gestão de Eventos</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">⚙️</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Eletromecânica</span>
-          <h3>Manutenção de Motores Elétricos</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">🔩</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Mecânica</span>
-          <h3>Tornearia Mecânica Básica</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">🌐</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Informática</span>
-          <h3>Desenvolvimento Web com HTML e CSS</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">📸</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Eventos</span>
-          <h3>Fotografia para Eventos Corporativos</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">🤖</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Informática</span>
-          <h3>Inteligência Artificial para Iniciantes</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">🎉</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Eventos</span>
-          <h3>Cerimonial e Protocolo</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-img">🔌</div>
-        <div class="course-card-body">
-          <span class="course-area-tag">Eletromecânica</span>
-          <h3>Instalações Elétricas Residenciais</h3>
-        </div>
-        <div class="course-card-footer"><a href="curso_detalhe.html" class="btn-card">Ver Curso</a></div>
-      </div>
+         {% endfor %}
 
     </div>
 
